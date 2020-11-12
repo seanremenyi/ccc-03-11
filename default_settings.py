@@ -13,7 +13,7 @@ class Config(object):
     
         return value
     
-class Development(Config):
+class DevelopmentConfig(Config):
     DEBUG = True
 
 class ProductionConfig(Config):
@@ -25,8 +25,8 @@ class TestingConfig(Config):
 environment = os.getenv("FLASK_ENV")
 
 if environment == "production":
-    app_config ==ProductionConfig()
+    app_config =ProductionConfig()
 elif environment == "testing":
-    app_config == TestingConfig()
+    app_config = TestingConfig()
 else:
-    app_config == DevelopmentConfig()
+    app_config = DevelopmentConfig()
